@@ -1,0 +1,50 @@
+# Python-related
+*.pyc
+*.pyo
+__pycache__/
+*.pyd
+
+# Virtual Environment
+env/
+venv/
+.venv/
+
+# Django-related
+*.sqlite3
+db.sqlite3
+/static/
+/media/
+
+# Environment Variables
+.env
+*.env
+
+# Logs
+*.log
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.swp
+*~
+.DS_Store
+
+# Docker-related
+docker-compose.override.yml
+.dockerignore
+
+# OS-specific
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Python Package Files
+*.egg
+*.egg-info/
+dist/
+build/
+pip-wheel-metadata/
+*.egg-info/
+
+# Git-related
+*.orig
