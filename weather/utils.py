@@ -1,4 +1,6 @@
 import warnings
+from datetime import datetime
+
 
 from weather.fake_data import FAKE_WEATHER_DATA
 
@@ -149,3 +151,4 @@ def map_one_service(data, current_data, lat, lon):
             "timezone": current_data.get("result", {}).get("timezone", 0),
         }
     return response_data
+

@@ -1,9 +1,21 @@
+from datetime import datetime
+
+def make_timestamp(time,format="%Y-%m-%dT%H:%M:%S"):
+    """
+    Make timestamp from the time that is available
+    use mode to pass type of your time
+    """
+    time = datetime.strptime(time,format)
+
+    timestamp = time.timestamp()
+    return timestamp
+
 FAKE_WEATHER_DATA = {
     "latitude": 0.0,
     "longitude": 0.0,
     "daily": [
         {
-            "dt": f"2024-12-{15 + i}",  # Generate sequential fake dates
+            "dt": make_timestamp(f"2024-12-{15 + i}","%Y-%m-%d") ,  # Generate sequential fake dates
             "pop": 20 + i,  # Example precipitation probability
             "uvi": 5 + i,   # Example UV index
             "rain": 0.5 + i * 0.1,  # Increment fake rain value
@@ -16,8 +28,8 @@ FAKE_WEATHER_DATA = {
                 "night": 16
             },
             "clouds": 10 + i * 5,  # Increment fake cloud coverage
-            "sunset": f"2024-12-{15 + i}T17:00:00",
-            "sunrise": f"2024-12-{15 + i}T07:00:00",
+            "sunset": make_timestamp(f"2024-12-{15 + i}T17:00:00"),
+            "sunrise": make_timestamp(f"2024-12-{15 + i}T07:00:00"),
             "weather": [
                 {
                     "id": 800 + i,  # Example weather ID
@@ -33,13 +45,13 @@ FAKE_WEATHER_DATA = {
         for i in range(7)  # Generate fake data for 7 days
     ],
     "current": {
-        "dt": "2024-12-15T14:00:00",
+        "dt": make_timestamp("2024-12-15T14:00:00"),
         "uvi": 3,
         "rain": None,
         "temp": 22,
         "clouds": 15,
-        "sunset": "2024-12-15T17:00:00",
-        "sunrise": "2024-12-15T07:00:00",
+        "sunset": make_timestamp("2024-12-15T17:00:00"),
+        "sunrise": make_timestamp("2024-12-15T07:00:00"),
         "weather": [
             {
                 "id": 800,

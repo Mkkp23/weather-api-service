@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # 3rd party
     "rest_framework",
+    'corsheaders',
     # local
     "weather.apps.WeatherConfig",
     "account.apps.AccountConfig",
@@ -51,6 +52,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    'corsheaders.middleware.CorsMiddleware',
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -133,3 +135,12 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # set default auth
 AUTH_USER_MODEL = "account.User"
+
+# set the cors setting (in real production use the cors_allowed_origins)
+
+# CORS_ALLOWED_ORIGINS = [
+#     'http://example:3030',
+# ]
+
+# only used on development cycle
+CORS_ALLOW_ALL_ORIGINS = True
